@@ -7,7 +7,7 @@ let svgo;
 exports.onPreBootstrap = (_, pluginOptions) => {
   svgo = new SVGO({
     full: true,
-    plugins: [{ inlineStyles: true }]
+    plugins: [{ inlineStyles: { onlyMatchedOnce: false } }]
   });
 }
 
