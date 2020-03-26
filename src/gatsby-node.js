@@ -20,7 +20,17 @@ exports.onPreBootstrap = (_, pluginOptions) => {
       { minifyStyles: true },
       { convertStyleToAttrs: true },
       { cleanupIDs: true },
-      { prefixIds: true },
+      {
+        prefixIds: {
+          prefix: {
+            toString() {
+              this.counter = this.counter || 0;
+
+              return `id-${this.counter++}`;
+            }
+          }
+        }
+      },
       { removeRasterImages: true },
       { removeUselessDefs: true },
       { cleanupNumericValues: true },
