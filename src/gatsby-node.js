@@ -6,7 +6,7 @@ let svgo;
 // eslint-disable-next-line no-unused-vars
 exports.onPreBootstrap = (_, pluginOptions) => {
   svgo = new SVGO({
-    multipass: true,
+    multipass: false,
     floatPrecision: 2,
     plugins: [
       { removeDoctype: true },
