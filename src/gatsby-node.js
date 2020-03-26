@@ -6,67 +6,7 @@ let svgo;
 // eslint-disable-next-line no-unused-vars
 exports.onPreBootstrap = (_, pluginOptions) => {
   svgo = new SVGO({
-    multipass: false,
-    floatPrecision: 2,
-    plugins: [
-      { removeDoctype: true },
-      { removeXMLProcInst: true },
-      { removeComments: true },
-      { removeMetadata: true },
-      { removeXMLNS: false },
-      { removeEditorsNSData: true },
-      { cleanupAttrs: true },
-      { inlineStyles: true },
-      { minifyStyles: true },
-      { convertStyleToAttrs: true },
-      { cleanupIDs: true },
-      {
-        prefixIds: {
-          prefix: {
-            toString() {
-              this.counter = this.counter || 0;
-
-              return `id-${this.counter++}`;
-            }
-          }
-        }
-      },
-      { removeRasterImages: true },
-      { removeUselessDefs: true },
-      { cleanupNumericValues: true },
-      { cleanupListOfValues: true },
-      { convertColors: true },
-      { removeUnknownsAndDefaults: true },
-      { removeNonInheritableGroupAttrs: true },
-      { removeUselessStrokeAndFill: true },
-      { removeViewBox: false },
-      { cleanupEnableBackground: true },
-      { removeHiddenElems: true },
-      { removeEmptyText: true },
-      { convertShapeToPath: true },
-      { moveElemsAttrsToGroup: true },
-      { moveGroupAttrsToElems: true },
-      { collapseGroups: true },
-      { convertPathData: true },
-      { convertTransform: true },
-      { removeEmptyAttrs: true },
-      { removeEmptyContainers: true },
-      { mergePaths: true },
-      { removeUnusedNS: true },
-      { sortAttrs: true },
-      { removeTitle: true },
-      { removeDesc: true },
-      { removeDimensions: true },
-      { removeAttrs: false },
-      { removeAttributesBySelector: false },
-      { removeElementsByAttr: false },
-      { addClassesToSVGElement: false },
-      { removeStyleElement: false },
-      { removeScriptElement: false },
-      { addAttributesToSVGElement: false },
-      { removeOffCanvasPaths: true },
-      { reusePaths: false }
-    ]
+    multipass: true
   });
 }
 
