@@ -5,9 +5,7 @@ let svgo;
 
 // eslint-disable-next-line no-unused-vars
 exports.onPreBootstrap = (_, pluginOptions) => {
-  svgo = new SVGO({
-    multipass: true
-  });
+  svgo = new SVGO();
 }
 
 const parseSvg = async svg => {
